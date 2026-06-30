@@ -34,6 +34,7 @@
 #include <spine/RegionAttachment.h>
 
 #include <spine/Bone.h>
+#include <spine/Slot.h>
 
 #include <assert.h>
 
@@ -124,12 +125,13 @@ void RegionAttachment::setUVs(float u, float v, float u2, float v2, float degree
 	}
 }
 
-void RegionAttachment::computeWorldVertices(Bone &bone, Vector<float> &worldVertices, size_t offset, size_t stride) {
+void RegionAttachment::computeWorldVertices(Slot &slot, Vector<float> &worldVertices, size_t offset, size_t stride) {
 	assert(worldVertices.size() >= (offset + 8));
-	computeWorldVertices(bone, worldVertices.buffer(), offset, stride);
+	computeWorldVertices(slot, worldVertices.buffer(), offset, stride);
 }
 
-void RegionAttachment::computeWorldVertices(Bone &bone, float *worldVertices, size_t offset, size_t stride) {
+void RegionAttachment::computeWorldVertices(Slot &slot, float *worldVertices, size_t offset, size_t stride) {
+	Bone &bone = slot.getBone();
 	float x = bone.getWorldX(), y = bone.getWorldY();
 	float a = bone.getA(), b = bone.getB(), c = bone.getC(), d = bone.getD();
 	float offsetX, offsetY;

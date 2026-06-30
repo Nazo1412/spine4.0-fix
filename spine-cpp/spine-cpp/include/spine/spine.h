@@ -87,6 +87,7 @@
 #include <spine/SkeletonClipping.h>
 #include <spine/SkeletonData.h>
 #include <spine/SkeletonJson.h>
+#include <spine/SkeletonRenderer.h>
 #include <spine/Skin.h>
 #include <spine/Slot.h>
 #include <spine/SlotData.h>

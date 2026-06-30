@@ -450,7 +450,7 @@ void Skeleton::getBounds(float &outX, float &outY, float &outWidth, float &outHe
 			if (outVertexBuffer.size() < 8) {
 				outVertexBuffer.setSize(8, 0);
 			}
-			regionAttachment->computeWorldVertices(slot->getBone(), outVertexBuffer, 0);
+			regionAttachment->computeWorldVertices(*slot, outVertexBuffer, 0);
 		} else if (attachment != NULL && attachment->getRTTI().instanceOf(MeshAttachment::rtti)) {
 			MeshAttachment *mesh = static_cast<MeshAttachment *>(attachment);
 
